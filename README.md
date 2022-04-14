@@ -23,7 +23,7 @@ Download the .sh script, make it executable, run it, and go through the wizard u
 
 <br>
 The installer takes about 35 minutes on a Raspberry Pi 3.
-Your input will be needed at the beginning and at the very end. It is save to talk away and make a sandwich.
+Your input will be needed at the beginning and at the very end. It is safe to walk away and make a sandwich.
 
 <br><br>
 
