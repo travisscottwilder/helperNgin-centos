@@ -204,10 +204,12 @@ installMySQL(){
 	sudo systemctl enable mariadb.service;
 	
 	
-	#TODO GIVE INFO WHAT IS HAPPENING
 	clear;
 	echo ""
+	echo ""
 	echo "${blue}--- The system is now going to run through securing MYSQL --------------------------------------------${resetColor}"
+	echo "${blue}--- The system is now going to run through securing MYSQL --------------------------------------------${resetColor}"
+	echo ""
 	echo ""
 	sudo mysql_secure_installation;
 	
