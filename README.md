@@ -3,11 +3,11 @@ Automates building a LAMP + C9 stack on a fresh install of ARM centos 7 for the 
   - Installs misc usability items (git,wget,nano,iptables,yum-utils)
   - Installs php72
   - Installs apache
-  - Create additional vhosts
+  - Creates additional vhosts
   - Installs mysqld (mariadb)
   - Creates SSH user
   - Creates mysql user
-  - Installs C9
+  - Installs C9 locally
 
 
 
