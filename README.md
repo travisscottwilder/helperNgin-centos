@@ -44,6 +44,7 @@ This is intended to be used only on a development local environment as the confi
   - ssh root user has password enabled
   - https is not enabled or forced
   - php72 is used instead of php73
+  - Username and passwords are supplied via command line input
 
 <br>
 
