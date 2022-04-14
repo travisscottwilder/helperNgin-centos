@@ -7,7 +7,7 @@ Automates building a LAMP + C9 stack on a fresh install of ARM centos 7 for the 
   - Installs mysqld (mariadb)
   - Creates SSH user
   - Creates mysql user
-  - Installs C9 locally
+  - Installs C9 IDE locally
 
 
 
