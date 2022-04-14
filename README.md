@@ -9,6 +9,10 @@ Automates building a LAMP + C9 stack on a fresh install of ARM centos 7 for the 
   - Creates mysql user
   - Installs C9
 
+
+
+
+
 # HOW TO USE
 Download the .sh script then run it.
 `curl https://todo;./CentosDevServerInstaller.sh;`
