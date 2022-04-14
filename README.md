@@ -22,7 +22,7 @@ Download the .sh script, make it executable, run it, and go through the wizard u
 ```curl https://raw.githubusercontent.com/travisscottwilder/CentosDevServerInstaller/main/CentosDevServerInstaller.sh > CentosDevServerInstaller.sh;chmod +x CentosDevServerInstaller.sh;./CentosDevServerInstaller.sh;```
 
 <br>
-The installer takes about 35 minutes on a Raspberry Pi 3.
+Assuming a full install (item 1)- The installer takes about 35 minutes on a Raspberry Pi 3.
 Your input will be needed at the beginning and at the very end. It is safe to walk away and make a sandwich.
 
 <br><br>
