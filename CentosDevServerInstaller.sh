@@ -299,7 +299,7 @@ drawIntroScreen(){
 	echo "${green}";
 	echo "------------------------------------------------"
 	echo "------------------------------------------------"
-	echo "-- ${magenta}DEV OPS WEB SERVER INSTALLER HELPER${green} --"
+	echo "-----   ${magenta}DEV OPS WEB SERVER INSTALLER HELPER${green}   -----"
 	echo "------------------------------------------------"
 	echo "------------------------------------------------${resetColor}"
 	echo ""
@@ -320,7 +320,7 @@ drawOptionsMenu(){
 	echo "${green}";
 	
 	echo "------------------------------------------------"
-	echo "-- ${blue}Available Options${green} --"
+	echo "-----    ${blue}Available Options${green}    -----"
 	echo "------------------------------------------------"
 	echo ""
 	echo "${blue} 1 ${green} |${resetColor} Full Install"
@@ -411,7 +411,7 @@ drawSummary() {
 	echo "${green}";
 	echo "------------------------------------------------"
 	echo "------------------------------------------------"
-	echo "-----------       ${red}SUMMARY${green}      -----------"
+	echo "-------------       ${red}SUMMARY${green}      -------------"
 	echo "------------------------------------------------"
 	secs_to_human "$(($(date +%s) - ${STARTTIME}))"
 	echo "------------------------------------------------${resetColor}"
@@ -419,36 +419,36 @@ drawSummary() {
 	echo "${blue}";
 	echo "------------------------------------------------"
 	echo "";
-	echo "${red}Action Done               ${blue}|${resetColor} ${exe_actionDone}";
+	echo "${red}Action Done             ${blue}|${resetColor} ${exe_actionDone}";
 	echo "";
 	
 	
 	if [[ "$exe_fourVHOST" = true ]]; then
-		echo "${red}vHosts created            ${blue}|${resetColor} ${vhosts_added}";
+		echo "${red}vHosts created          ${blue}|${resetColor} ${vhosts_added}";
 	fi
 	
 	
 	if [[ "$exe_sixMYSQLUSER" = true ]]; then
-		echo "${red}MySQL access              ${blue}|${resetColor} ${userToUse}${yellow}:${resetColor}${mysqlUserPass}";
+		echo "${red}MySQL access            ${blue}|${resetColor} ${userToUse}${yellow}:${resetColor}${mysqlUserPass}";
 	fi 
 	
 	
 	if [[ "$exe_sevenSSHUSER" = true ]]; then
-		echo "${red}SSH User Created          ${blue}|${resetColor} ${userToUse}${resetColor}";
+		echo "${red}SSH User Created        ${blue}|${resetColor} ${userToUse}${resetColor}";
 	fi
 	
 	
 	if [[ "$exe_eightC9" = true ]]; then
-		echo "${red}C9 IDE Access             ${blue}|${resetColor} ${userToUse}${yellow}:${resetColor}${c9userPass}";
-		echo "${red}C9 IDE Port               ${blue}|${resetColor} ${c9portToUse}${resetColor}";
+		echo "${red}C9 IDE Access           ${blue}|${resetColor} ${userToUse}${yellow}:${resetColor}${c9userPass}";
+		echo "${red}C9 IDE Port             ${blue}|${resetColor} ${c9portToUse}${resetColor}";
 	fi
 	
 	if [[ "$exe_nineUpdateRootSSHUser" = true ]]; then
-		echo "${red}root password updated     ${blue}|${resetColor} root${yellow}:${resetColor}${rootUserPassword}";
+		echo "${red}root password updated   ${blue}|${resetColor} root${yellow}:${resetColor}${rootUserPassword}";
 	fi
 	
 	if [[ "$exe_fiveMYSQL" = true ]]; then
-		echo "${red}MYSQL Root Password     ${blue}|${resetColor} It is possible the mysql root password was updated during mysql_secure_installation";
+		echo "${red}MYSQL Root Password      ${blue}|${resetColor} It is possible the mysql root password was updated during mysql_secure_installation";
 	fi
 
 	
@@ -472,7 +472,7 @@ secs_to_human() {
         secs=$(echo ${secs}*60|bc|awk '{print int($1+0.5)}')
     fi
     
-	echo "-------------- Took ${min}m & ${secs}s -------------"
+	echo "---------------- Took ${min}m & ${secs}s ---------------"
 }
 
 
