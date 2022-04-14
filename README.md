@@ -9,7 +9,9 @@ Automates building a LAMP (web server) + C9 IDE stack on a fresh install of ARM 
   - Creates mysql user
   - Creates SSH user
 
+<br>
 
+![Menu selection](/menu_select.png)
 
 
 
@@ -25,9 +27,7 @@ Download the .sh script, make it executable, run it, and go through the wizard u
 Assuming a full install (item 1)- the installer takes about 35 minutes on a Raspberry Pi 3.
 Your input will be needed at the beginning and at the very end. It is safe to walk away and make a sandwich.
 
-<br><br>
 
-![Menu selection](/menu_select.png)
 
 
 # REQUIREMENTS
@@ -39,7 +39,7 @@ Your input will be needed at the beginning and at the very end. It is safe to wa
 # NOTES
 This is intended to be used only on a development local environment as the configuration/security of this installer is not of production quality due to *at least*
   - /var/www is made 777
-  - MySQL user created is given % host & full admin priveldges 
+  - MySQL user created is given % host & full admin privileges 
   - ssh root user has password enabled
   - https is not enabled or forced
   - php72 is used instead of php73
