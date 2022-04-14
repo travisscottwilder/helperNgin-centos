@@ -521,7 +521,7 @@ drawOptionsMenu;
 if [[ "$exe_nineUpdateRootSSHUser" = true ]]; then
 	echo "";
 	echo "";
-	echo "${yellow}--- Enter in your new root password --------------------------------------------${resetColor}"
+	echo "${yellow}--- [PASSWORD UPDATE] Enter in your new root password --------------------------------------------${resetColor}"
 	echo "";
 	read rootUserPassword
 	
