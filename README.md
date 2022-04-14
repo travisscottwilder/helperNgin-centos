@@ -22,6 +22,10 @@ Download the .sh script, make it executable, run it, and go through the wizard u
 ```curl https://raw.githubusercontent.com/travisscottwilder/CentosDevServerInstaller/main/CentosDevServerInstaller.sh > CentosDevServerInstaller.sh;chmod +x CentosDevServerInstaller.sh;./CentosDevServerInstaller.sh;```
 
 <br>
+The installer takes about 35 minutes on a Raspberry Pi 3.
+Your input will be needed at the beginning and at the very end. It is save to talk away and make a sandwich.
+
+<br><br>
 
 ![Menu selection](/menu_select.png)
 
@@ -29,7 +33,6 @@ Download the .sh script, make it executable, run it, and go through the wizard u
 # REQUIREMENTS
   - Must be connected to the internet
   - Need id_rsa.pub value (public key) if creating SSH user (use `ssh-keygen` to generate keys)
-  - Keyboard to type answers asked by wizard
   - Centos 7 for raspberry Pi [https://mirror.math.princeton.edu/pub/centos-altarch/7/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-2009-sda.raw.xz]
 
 
