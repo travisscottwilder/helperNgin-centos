@@ -440,6 +440,7 @@ drawSummary() {
 	
 	if [[ "$exe_eightC9" = true ]]; then
 		echo "${red}C9 IDE Access             ${blue}|${resetColor} ${userToUse}${yellow}:${resetColor}${c9userPass}";
+		echo "${red}C9 IDE Port               ${blue}|${resetColor} ${c9portToUse}${resetColor}";
 	fi
 	
 	if [[ "$exe_nineUpdateRootSSHUser" = true ]]; then
