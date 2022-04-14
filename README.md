@@ -21,3 +21,9 @@ Download the .sh script, make it executable, run it, and go through the wizard.
 <br>
 
 ![Menu selection](/menu_select.png)
+
+
+# REQUIREMENTS
+  - Must be connected to the internet
+  - Need id_rsa.pub value (public key) if creating SSH user (use `ssh-keygen` to generate keys)
+  - Keyboard to type answers asked by wizard
