@@ -27,3 +27,4 @@ Download the .sh script, make it executable, run it, and go through the wizard.
   - Must be connected to the internet
   - Need id_rsa.pub value (public key) if creating SSH user (use `ssh-keygen` to generate keys)
   - Keyboard to type answers asked by wizard
+  - Centos 7 for raspberry Pi [https://mirror.math.princeton.edu/pub/centos-altarch/7/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-2009-sda.raw.xz]
