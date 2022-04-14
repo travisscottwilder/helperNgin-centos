@@ -166,7 +166,7 @@ CustomLog /etc/httpd/logs/access_log combined
 EOF
 	
 	touch /var/www/$websiteToCreate/index.html;
-	echo "[PHP] index page inside [$websiteToCreate]" > /var/www/$websiteToCreate/index.html;
+	echo "[HTML] index page inside [$websiteToCreate]" > /var/www/$websiteToCreate/index.html;
 	
 	touch /var/www/$websiteToCreate/index.php;
 	echo "[PHP] index page inside [$websiteToCreate]" > /var/www/$websiteToCreate/index.php;
