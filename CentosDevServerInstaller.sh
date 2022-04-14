@@ -44,6 +44,7 @@ freshCentosInstall() {
 	rootfs-expand;
 	yum -y remove postfix;
 	yum update -y;
+	drawTimeElapsed
 	yum clean all;
 	yum -y install git wget nano iptables-services yum-utils;
 	drawTimeElapsed
@@ -98,6 +99,7 @@ gpgcheck=1
 gpgkey=https://rpms.remirepo.net/RPM-GPG-KEY-remi
 EOF
 	
+	drawTimeElapsed
 	echo "${blue}--- Installing apache --------------------------------------------${resetColor}"
 	echo "";
 	
@@ -203,6 +205,7 @@ installMySQL(){
 	echo ""
 	echo "${blue}--- Installing Mysql, doing secure installation, and creating user --------------------------------------------${resetColor}"
 	echo "";
+	drawTimeElapsed
 	
 	sudo yum -y install mariadb-server mariadb;
 	sudo systemctl start mariadb;
@@ -228,6 +231,7 @@ installMySQL(){
 #
 #
 installMysqlUser() {
+	drawTimeElapsed
 	echo ""
 	echo "${blue}--- accessing MYSQL to create a user --------------------------------------------${resetColor}"
 	echo "";
@@ -240,7 +244,7 @@ GRANT ALL PRIVILEGES ON *.* TO '$userToUse'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EOF
 
-	drawTimeElapsed
+	
 
 #TODO create phpuser that only has select privledges and only from localhost
 
@@ -282,7 +286,7 @@ createInstallC9() {
 	drawTimeElapsed
 	sudo yum -y groupinstall 'Development Tools';
 	sudo yum -y install make nodejs git gcc glibc-static ncurses-devel;
-	
+	drawTimeElapsed
 	
 	cd /home/$userToUse;
 	
@@ -292,12 +296,13 @@ createInstallC9() {
 	npm i forever -g;
 	
 	chmod 777 /var/www -R;
-	
+
 	su -c 'git clone https://github.com/c9/core.git c9sdk;cd c9sdk; pwd;scripts/install-sdk.sh;' $userToUse
+	drawTimeElapsed
 	su -c "forever start /home/$userToUse/c9sdk/server.js -w /var/www -l 0.0.0.0 -p $c9portToUse -a $userToUse:$c9userPass;" $userToUse
 
-	# node start /home/tdub/c9sdk/server.js -w /var/www -l 0.0.0.0 -p 9191 -a tdub:tdubtdub;
-	#-> forever stop /home/tdub/c9sdk/server.js;
+	# node start /home/USER/c9sdk/server.js -w /var/www -l 0.0.0.0 -p 9191 -a username:passwordhere;
+	#-> forever stop /home/USER/c9sdk/server.js;
 	
 }
 
