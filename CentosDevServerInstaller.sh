@@ -46,6 +46,7 @@ freshCentosInstall() {
 	yum update -y;
 	yum clean all;
 	yum -y install git wget nano iptables-services yum-utils;
+	drawTimeElapsed
 	systemctl enable iptables;
 	sudo service iptables start;
 	yum clean all;
@@ -102,6 +103,7 @@ EOF
 	
 	yum clean all;
 	yum update -y;
+	drawTimeElapsed
 	yum -y install httpd php php-common php-cli php-devel php-fpm php-gd php-imap php-intl php-mysql php-process php-xml php-xmlrpc php-zts;
 	
 	service httpd start;
@@ -129,6 +131,7 @@ makePHPFilesPriority(){
 	
 	sed -i '/DirectoryIndex index.html/c\DirectoryIndex index.php index.html' /etc/httpd/conf/httpd.conf
 	service httpd restart;
+	drawTimeElapsed
 	
 }
 
@@ -173,6 +176,8 @@ EOF
 	
 	vhosts_added+="${websiteToCreate},"
 	
+	drawTimeElapsed
+	
 	while true; do
 		read -p "${yellow}--- Would you like to install an additional site (vhost) onto this box? [y/n] --------------------------------------------${resetColor}" yn
 		case $yn in
@@ -205,6 +210,9 @@ installMySQL(){
 	
 	
 	clear;
+	
+	drawTimeElapsed
+	
 	echo ""
 	echo ""
 	echo "${blue}--- The system is now going to run through securing MYSQL --------------------------------------------${resetColor}"
@@ -232,6 +240,8 @@ GRANT ALL PRIVILEGES ON *.* TO '$userToUse'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EOF
 
+	drawTimeElapsed
+
 #TODO create phpuser that only has select privledges and only from localhost
 
 }
@@ -256,6 +266,8 @@ creationSSHUser() {
 	chown -R $userToUse:$userToUse /home/$userToUse/.ssh;
 	chmod 700 /home/$userToUse/.ssh;
 	chmod 600 /home/$userToUse/.ssh/authorized_keys;
+	
+	drawTimeElapsed
 }
 
 
@@ -267,13 +279,16 @@ createInstallC9() {
 	
 	sudo yum update -y;
 	sudo yum -y install epel-release npm;
+	drawTimeElapsed
 	sudo yum -y groupinstall 'Development Tools';
 	sudo yum -y install make nodejs git gcc glibc-static ncurses-devel;
 	
 	
 	cd /home/$userToUse;
 	
+	
 	npm install forever -g;
+	drawTimeElapsed
 	npm i forever -g;
 	
 	chmod 777 /var/www -R;
@@ -408,14 +423,11 @@ drawOptionsMenu(){
 drawSummary() {
 	drawIntroScreen
 
-	echo "";
-	echo "";
-	echo "${green}";
-	echo "------------------------------------------------"
+	echo "${green}------------------------------------------------"
 	echo "------------------------------------------------"
 	echo "-------------       ${red}SUMMARY${green}      -------------"
 	echo "------------------------------------------------"
-	secs_to_human "$(($(date +%s) - ${STARTTIME}))"
+	drawTimeElapsed
 	echo "------------------------------------------------${resetColor}"
 	echo ""
 	echo "${blue}";
@@ -464,20 +476,27 @@ drawSummary() {
 
 
 
-secs_to_human() {
-    if [[ -z ${1} || ${1} -lt 60 ]] ;then
-        min=0 ; secs="${1}"
+
+
+drawTimeElapsed(){
+	
+	secondsLasped="$(($(date +%s) - ${STARTTIME}))";
+	
+	if [[ -z ${secondsLasped} || ${secondsLasped} -lt 60 ]] ;then
+        min=0 ; secs="${secondsLasped}"
     else
-        time_mins=$(echo "scale=2; ${1}/60" | bc)
+        time_mins=$(echo "scale=2; ${secondsLasped}/60" | bc)
         min=$(echo ${time_mins} | cut -d'.' -f1)
         secs="0.$(echo ${time_mins} | cut -d'.' -f2)"
-        secs=$(echo ${secs}*60|bc|awk '{print int($1+0.5)}')
+        secs=$(echo ${secs}*60|bc|awk '{print int($secondsLasped+0.5)}')
     fi
     
-	echo "---------------- Took ${min}m & ${secs}s ---------------"
+	echo "${blue}------------------------------------------------${resetColor}"
+	echo "${red}------------------------------------------------${resetColor}"
+	echo "---------------- Time Lapsed ${min}m & ${secs}s ---------------"
+	echo "${red}------------------------------------------------${resetColor}"
+	echo "${blue}------------------------------------------------${resetColor}"
 }
-
-
 
 
 
@@ -577,13 +596,6 @@ echo "";
 
 mysqlPhpPass="phppass"
 #ask for mysql phpuser password
-
-
-
-#TODO ask for root password to be updated
-#todo remove root ssh from outside world
-#echo "$mysqlUserPass" | passwd --stdin root
-
 
 
 
