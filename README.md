@@ -3,11 +3,11 @@ Automates building a LAMP (web server) + C9 IDE stack on a fresh install of ARM 
   - Installs misc usability items (git,wget,nano,iptables,yum-utils)
   - Installs php72
   - Installs apache
-  - Creates additional vhosts
+  - Installs C9 IDE locally
   - Installs mysqld (mariadb)
+  - Creates additional vhosts
   - Creates mysql user
   - Creates SSH user
-  - Installs C9 IDE locally
 
 
 
