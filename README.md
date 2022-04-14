@@ -5,8 +5,8 @@ Automates building a LAMP (web server) + C9 IDE stack on a fresh install of ARM 
   - Installs apache
   - Creates additional vhosts
   - Installs mysqld (mariadb)
-  - Creates SSH user
   - Creates mysql user
+  - Creates SSH user
   - Installs C9 IDE locally
 
 
