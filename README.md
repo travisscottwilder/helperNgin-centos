@@ -11,7 +11,7 @@ Automates building a LAMP (web server) + C9 IDE stack on a fresh install of ARM 
 
 <br>
 
-![Menu selection](/menu_select.png)
+![Menu selection](/images/menu_select.png)
 
 
 
@@ -26,8 +26,9 @@ Download the .sh script, make it executable, run it, and go through the wizard u
 <br>
 Assuming a full install (item 1)- the installer takes about 35 minutes on a Raspberry Pi 3.
 Your input will be needed at the beginning and at the very end. It is safe to walk away and make a sandwich.
+<br><br>
 
-
+![summary](/images/summary.png)
 
 
 # REQUIREMENTS
@@ -43,3 +44,7 @@ This is intended to be used only on a development local environment as the confi
   - ssh root user has password enabled
   - https is not enabled or forced
   - php72 is used instead of php73
+
+<br>
+
+![C9](/images/c9.jpg)
