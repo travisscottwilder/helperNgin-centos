@@ -1,5 +1,5 @@
 # PURPOSE
-Automates building a LAMP (web server) + C9 IDE stack on a fresh install of ARM centos 7 for the Raspberry pi.
+Automates building a LAMP (web server) + C9 IDE stack on a fresh install of ARM centos 7 for the Raspberry pi. (CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-2009-sda.raw)
   - Installs misc usability items (git,wget,nano,iptables,yum-utils)
   - Installs php72
   - Installs apache
