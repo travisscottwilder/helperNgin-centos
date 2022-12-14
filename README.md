@@ -21,7 +21,7 @@ ssh into your centos box `ssh root@IP_HERE`
 
 Download the .sh script, make it executable, run it, and go through the wizard using:
 
-```curl https://raw.githubusercontent.com/travisscottwilder/CentosDevServerInstaller/main/CentosDevServerInstaller.sh > CentosDevServerInstaller.sh;chmod +x CentosDevServerInstaller.sh;./CentosDevServerInstaller.sh;```
+```curl https://raw.githubusercontent.com/travisscottwilder/helperNgin-centos/main/CentosDevServerInstaller.sh > CentosDevServerInstaller.sh;chmod +x CentosDevServerInstaller.sh;./CentosDevServerInstaller.sh;```
 
 <br>
 Assuming a full install (item 1)- the installer takes about 35 minutes on a Raspberry Pi 3.
